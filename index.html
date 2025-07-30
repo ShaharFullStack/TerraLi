@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terra Li - טרה לי | מובילה בעיצוב טרריומים ובעלת סדנאות בישראל. ליאורה מעוז מציעה טרריומים בהזמנה אישית וסדנאות מקצועיות. עולם של צמחים קטן ויפהפה בתוך זכוכית.">
-    <meta name="keywords" content="טרריום, עיצוב טרריומים, סדנת טרריום, צמחים, גינת זכוכית, עיצוב בצמחים, ליאורה מעוז, טרה לי, Terra Li, סדנאות צמחים">
+    <meta name="description" content="Terra Li - טרה לי | ליאורה מעוז, מובילה בעיצוב טרריומים ובעלת סדנאות בישראל.">
+    <meta name="keywords" content="טרריום, עיצוב טרריומים, סדנת טרריום, צמחים, גינה מיניאטורית, עיצוב צמחים, ליאורה מעוז, טרה לי, Terra Li, סדנת צמחים">
     <meta name="author" content="ליאורה מעוז - Terra Li טרריומים">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Hebrew">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Terra Li - טרה לי | אמנית טרריומים ומעבירת סדנאות">
+    <meta property="og:title" content="Terra Li | טרה לי">
     <meta property="og:description" content="ליאורה מעוז - אחת מאמניות הטרריום המובילות בישראל. טרריומים בהזמנה אישית וסדנאות מקצועיות. הביאו את הטבע הקטן והיפה לבית שלכם.">
     <meta property="og:image" content="https://shaharfullstack.github.io/TerraLi/assets/images/logoT.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://shaharfullstack.github.io/TerraLi/">
-    <meta property="og:site_name" content="Terra Li טרריומים">
+    <meta property="og:site_name" content="Terra Li | טרה לי">
     <meta property="og:locale" content="he_IL">
     
     <!-- Twitter Card Meta Tags -->
@@ -33,8 +33,8 @@
     <link rel="canonical" href="https://shaharfullstack.github.io/TerraLi/">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" href="assets/images/logoT.png">
-    
-    <title>Terra Li - טרה לי | אמנית טרריומים ומעבירת סדנאות</title>
+
+    <title>Terra Li | טֵרָה לִי</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,14 +43,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <!-- Custom Styles -->
     <style>
-      /* Use Assistant font for the entire page */
+      /* Use Hebrew-optimized fonts for the entire page */
       body {
-        font-family: "Assistant", sans-serif;
+        font-family: "Heebo", "Rubik", "Frank Ruhl Libre", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         scroll-behavior: smooth;
         background-image: linear-gradient(
           to bottom,
@@ -58,6 +58,17 @@
           rgba(255, 255, 255, 0.8),
           rgba(160, 114, 99, 1)
         );
+      }
+      
+      /* Headings use Frank Ruhl Libre for elegance with shadows */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Frank Ruhl Libre", "Heebo", "Rubik", serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* Body text uses Heebo for readability */
+      p, span, div, a {
+        font-family: "Heebo", "Rubik", "Frank Ruhl Libre", sans-serif;
       }
 
       /* Style for the hero section background */
@@ -72,7 +83,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: fill;
+        object-fit: cover;
         z-index: -1;
       }
       .process-bg {
@@ -88,18 +99,30 @@
         position: relative;
       }
 
-      /* Enhanced Hero Section */
+      /* Enhanced Hero Section with Parallax */
+      #home {
+        position: relative;
+        z-index: 10;
+      }
+      
+      /* Services section should overlay the hero */
+      #services {
+        position: relative;
+        z-index: 30;
+        margin-top: -5px; /* Slight overlap for seamless transition */
+      }
+      
       .hero-content {
         animation: fadeInUp 1.2s ease-out;
       }
 
       .hero-title {
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        text-shadow: 2px 2px 8px rgba(51, 26, 18, 0.8);
         animation: slideInRight 1s ease-out 0.3s both;
       }
 
       .hero-subtitle {
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        text-shadow: 1px 1px 4px rgba(51, 26, 18, 0.7);
         animation: slideInLeft 1s ease-out 0.6s both;
       }
 
@@ -134,13 +157,13 @@
 
       /* Enhanced shadows */
       .shadow-3xl {
-        box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 35px 60px -12px rgba(51, 26, 18, 0.4);
       }
 
       /* Enhanced Portfolio Gallery */
       .masonry-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-gap: 20px;
         max-width: 1200px;
         margin: 0 auto;
@@ -149,23 +172,24 @@
       .masonry-item {
         border-radius: 15px;
         overflow: hidden;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 25px rgba(51, 26, 18, 0.1);
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         position: relative;
+        height: 350px; /* Fixed height for consistency */
       }
 
       .masonry-item:hover {
         transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 20px 40px rgba(51, 26, 18, 0.2);
       }
 
       .masonry-item.large {
         grid-column: span 2;
-        grid-row: span 2;
+        height: 450px; /* Taller for featured images */
       }
 
       .masonry-item.tall {
-        grid-row: span 2;
+        height: 450px; /* Consistent tall height */
       }
 
       .image-container {
@@ -179,6 +203,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
         transition: transform 0.6s ease;
       }
 
@@ -194,8 +219,8 @@
         bottom: 0;
         background: linear-gradient(
           135deg,
-          rgba(125, 139, 95, 0.9),
-          rgba(196, 155, 160, 0.8)
+          rgba(45, 90, 74, 0.9),
+          rgba(125, 139, 95, 0.8)
         );
         opacity: 0;
         transition: all 0.4s ease;
@@ -228,7 +253,7 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(125, 139, 95, 0.9);
         backdrop-filter: blur(5px);
       }
 
@@ -256,7 +281,7 @@
         width: 100%;
         height: auto;
         border-radius: 10px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 20px 60px rgba(51, 26, 18, 0.5);
       }
 
       .lightbox-close {
@@ -290,6 +315,18 @@
         background-color: #7d8b5f;
       }
       .border-brand-green {
+        border-color: #2e4401;
+      }
+      .bg-brand-green-dark {
+        background-color: #7d8b5f;
+      }
+      .bg-brand-green-transparent {
+        background-color: #c4ee6951;
+      }
+      .bg-brand-green {
+        background-color: #7d8b5f;
+      }
+      .border-brand-green {
         border-color: #7d8b5f;
       }
       .hover\:bg-brand-green-dark:hover {
@@ -300,7 +337,7 @@
         color: #8b7d9c;
       }
       .bg-brand-purple {
-        background-color: #8b7d9c;
+        background-color: #8b7d9cc1;
       }
       .border-brand-purple {
         border-color: #8b7d9c;
@@ -335,12 +372,26 @@
         background-color: #331a12;
       }
 
+      /* Dark text colors for proper contrast */
+      .text-dark-brown {
+        color: #2d1810;
+      }
+      .text-dark-green {
+        color: #4a5238;
+      }
+      .text-very-dark {
+        color: #1a0f0a;
+      }
+
       /* Applying custom colors to Tailwind utilities - backwards compatibility */
       .text-brand-gold {
         color: #b0c49b;
       }
-      .text-brand-teal {
-        color: #7d8b5f;
+      .text-brand-pink {
+        color: #ffc4ff;
+      }
+      .text-brand-purple {
+        color: #5d0468;
       }
       .focus\:ring-brand-teal:focus {
         --tw-ring-color: #7d944b;
@@ -371,23 +422,38 @@
           grid-gap: 15px;
         }
 
+        .masonry-item {
+          height: 300px; /* Consistent height on mobile */
+        }
+
         .masonry-item.large {
           grid-column: span 1;
-          grid-row: span 1;
+          height: 300px; /* Same height as regular items on mobile */
         }
 
         .masonry-item.tall {
-          grid-row: span 1;
+          height: 300px; /* Same height as regular items on mobile */
         }
 
         .hero-title {
           font-size: 3rem;
         }
+
       }
 
       @media (max-width: 640px) {
+        .masonry-grid {
+          grid-template-columns: 1fr;
+          grid-gap: 12px;
+        }
+        
         .masonry-item {
-          height: 250px;
+          height: 280px; /* Slightly smaller on very small screens */
+        }
+
+        .masonry-item.large,
+        .masonry-item.tall {
+          height: 280px; /* Consistent with regular items */
         }
       }
 
@@ -427,7 +493,7 @@
   </head>
   <body class="bg-gray-50 text-gray-800">
     <!-- Header -->
-    <header class="backdrop-blur-sm bg-white/70 sticky top-0 p-2 z-30">
+    <header class="backdrop-blur-sm bg-brand-green-transparent sticky top-0 p-2 z-30">
       <div class="container mx-auto px-3 flex justify-between items-center">
         <!-- לוגו וכותרת -->
         <a href="#" class="flex items-center flex-shrink-0">
@@ -437,34 +503,34 @@
             class="h-12 w-12 object-contain rounded-full"
           />
           <span
-            class="ml-4 mr-2 text-2xl font-bold text-gray-700 hidden sm:block"
+            class="ml-4 mr-2 text-2xl font-bold text-dark-brown hidden sm:block"
             >Terra Li</span
           >
         </a>
         <!-- כותרת במובייל -->
-        <span class="block md:hidden text-xl font-bold text-gray-700 mx-auto"
-          >Terra Li | טרריומים</span
+        <span class="block md:hidden text-xl text-dark-brown font-bold mx-auto"
+          >Terra Li | טֵרָה לִי</span
         >
         <!-- תפריט ניווט רגיל בדסקטופ -->
         <nav class="hidden md:flex space-x-20 space-x-reverse mb-2">
           <a
             href="#services"
-            class="text-gray-600 text-xl font-bold hover:text-brand-teal transition duration-300"
+            class="text-dark-brown hover:text-brand-pink text-xl font-bold hover:text-brand-teal transition duration-300"
             >סדנאות</a
           >
           <a
             href="#about"
-            class="text-gray-600 text-xl font-bold hover:text-brand-teal transition duration-300"
+            class="text-dark-brown hover:text-brand-pink text-xl font-bold hover:text-brand-teal transition duration-300"
             >אודות</a
           >
           <a
             href="#portfolio"
-            class="text-gray-600 text-xl font-bold hover:text-brand-teal transition duration-300"
+            class="text-dark-brown hover:text-brand-pink text-xl font-bold hover:text-brand-teal transition duration-300"
             >גלריה</a
           >
           <a
             href="#contact"
-            class="text-gray-600 text-xl font-bold hover:text-brand-teal transition duration-300"
+            class="text-dark-brown hover:text-brand-pink text-xl font-bold hover:text-brand-teal transition duration-300"
             >יצירת קשר</a
           >
         </nav>
@@ -540,931 +606,441 @@
         >
       </div>
     </header>
+<main>
 
-    <main>
-      <!-- Hero Section -->
-      <section
-        id="home"
-        class="hero-bg bg-green-900/50 text-white h-screen flex items-center justify-center text-center relative overflow-hidden"
-      >
-        <!-- Animated Background Elements -->
-        <div
-          class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-black/0"
-        ></div>
-        <video
-          class="absolute inset-0 w-full h-full object-cover -z-10"
-          src="assets/videos/workshopPrep.mp4"
-          autoplay
-          loop
-          muted
-          playsinline
-        ></video>
-        <div class="max-w-4xl px-6 relative z-10">
-          <div class="hero-content">
-            <img
-            src="assets/android-chrome-512x512.png"
-              alt="Terra Li Logo"
-              class="mb-6 mx-auto w-60 h-60 object-cover rounded-full shadow-2xl"
-            />
-            <h1
-              class="hero-title text-5xl md:text-7xl font-bold leading-tight mb-6"
-            >
-              <span class="inline-block">עולם קטן</span>
-              <span class="inline-block text-brand-gold">יופי אינסופי.</span>
+    <!-- Hero Section with Fixed Background -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+        <!-- Video Background Fixed -->
+        <video id="hero-video" class="absolute inset-0 w-full h-full object-cover z-0" src="assets/videos/workshopPrep.mp4" autoplay loop muted playsinline></video>
+        <div class="relative z-20 max-w-4xl px-6 mx-auto text-center flex flex-col items-center">
+            <img src="assets/android-chrome-512x512.png" alt="Terra Li Logo" class="mb-4 w-48 h-48 md:w-56 md:h-56 object-cover rounded-full shadow-2xl border-4 border-white/20 backdrop-blur-sm"/>
+            <h1 class="text-6xl md:text-8xl font-bold leading-tight mb-4 drop-shadow-xl">
+                <span class="block">עולם קטן,</span>
+                <span class="block" style="color: #a2d151;">יופי אינסופי.</span>
             </h1>
-            <p
-              class="hero-subtitle text-2xl bg-brand-gold p-3 rounded-lg md:text-4xl mb-8 max-w-3xl mx-auto leading-relaxed"
-            >
-              Terra Li | טרריומים בהזמנה אישית וסדנאות מקצועיות
+            <p class="text-2xl text-dark-brown md:text-3xl bg-[#a2d151]/20 backdrop-blur-md py-2 px-4 rounded-lg max-w-3xl mx-auto">
+                Terra Li | טרריומים בהזמנה אישית וסדנאות מקצועיות
             </p>
-            <div
-              class="hero-cta flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <a
-                href="#portfolio"
-                class="cta-button bg-brand-teal text-white py-4 px-10 rounded-full text-lg font-bold hover:bg-brand-gold-dark transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 inline-flex items-center gap-3 justify-center"
-              >
-                <span>גלריית טרריומים</span>
-              </a>
-              <a
-                href="mailto:terrali.contact@gmail.com?subject=מעוניין בסדנאות טרריום"
-                class="cta-button bg-brand-gold text-teal hover:text-brand-gold py-4 px-10 rounded-full text-lg font-bold hover:bg-brand-teal-dark transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 inline-flex items-center gap-3 justify-center"
-              >
-                <span>הרשמה לסדנה</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Services Section -->
-      <section
-        id="services"
-        class="min-h-screen flex flex-col justify-center text-center relative overflow-hidden bg-brand-brown py-12 md:py-20"
-      >
-        <div class="px-4 sm:px-6 py-8">
-          <h2
-            class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-brand-gold"
-          >
-            עולם הטרריומים של Terra Li
-          </h2>
-          <p
-            class="text-gray-300 text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto -mb-2"
-          >
-            אני מציעה חוויה מקצועית וייחודית בעולם הטרריומים - מיצירת גנים מיניאטוריים
-            וסדנאות יצירתיות שמביאות את הטבע הביתה.
-          </p>
-        </div>
-
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 flex-1 px-4 md:px-8"
-        >
-          <!-- Service 1 -->
-          <div
-            class="relative flex flex-col items-center justify-center text-center rounded-2xl overflow-hidden min-h-[350px] md:min-h-[400px] lg:min-h-[450px] shadow-lg group"
-            style="
-              background-image: url('assets/images/custom.jpeg');
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-            "
-          >
-            <div
-              class="absolute inset-0 bg-brand-brown bg-opacity-60 group-hover:bg-opacity-70 transition duration-300"
-            ></div>
-            <div
-              class="relative z-10 flex flex-col items-center justify-center h-full p-6 sm:p-8"
-            >
-              <h3
-                class="text-2xl sm:text-3xl font-bold text-brand-teal mb-4 drop-shadow-lg"
-              >
-                טרריומים בהזמנה אישית
-              </h3>
-              <p class="text-white text-base sm:text-lg md:text-xl mb-4">
-                יצירת טרריום מותאם אישית עבורכם. אני לוקחת בחשבון את הסגנון שלכם,
-                את תנאי התאורה בבית ואת הרצונות שלכם, ויוצרת עבורכם גן מיניאטורי
-                מושלם שיישאר אתכם זמן רב.
-              </p>
-              <div
-                class="bg-gradient-to-r from-brand-gold/10 to-brand-gold/5 p-4 rounded-lg mt-2 w-full max-w-xs mx-auto"
-              >
-                <p
-                  class="font-semibold text-brand-gold text-base sm:text-lg mb-2"
-                >
-                 למי מתאים הקסם הירוק הזה?
-                </p>
-                <p class="text-gray-50 text-sm sm:text-base md:text-lg mb-4">
-                  למי שרוצה גן ייחודי שייחד את הבית וישמח את כל המשפחה.
-                  מתאים למתנה, לעיצוב בית או משרד.
-                </p>
-                <a
-                  href="mailto:terrali.contact@gmail.com?subject=בקשה לטרריום מותאם אישית"
-                  class="bg-brand-teal text-white py-2 px-4 rounded-full text-base sm:text-lg font-semibold hover:bg-brand-teal-dark transition-colors inline-block"
-                >
-                  הזמינו טרריום
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#portfolio" class="bg-white/90 text-[#2d5a4a] hover:bg-[#a2d151] py-3 px-8 rounded-full text-xl font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                    גלריית טרריומים
                 </a>
-              </div>
+                <a href="#services" class="bg-white/90 text-[#2d5a4a] hover:bg-[#a2d151] py-3 px-8 rounded-full text-xl font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                    הרשמה לסדנה
+                </a>
             </div>
-          </div>
+        </div>
+    </section>
 
-          <!-- Service 2 -->
-          <div
-            class="relative flex flex-col items-center justify-center text-center rounded-2xl overflow-hidden min-h-[350px] md:min-h-[400px] lg:min-h-[450px] shadow-lg group"
-            style="
-              background-image: url('assets/images/workshop.jpeg');
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-            "
-          >
-            <div
-              class="absolute inset-0 bg-brand-brown bg-opacity-60 group-hover:bg-opacity-70 transition duration-300"
-            ></div>
-            <div
-              class="relative z-10 flex flex-col items-center justify-center h-full p-6 sm:p-8"
-            >
-              <h3
-                class="text-2xl sm:text-3xl font-bold text-brand-teal mb-4 drop-shadow-lg"
-              >
-                סדנאות טרריום קבוצתיות
-              </h3>
-              <p class="text-white text-base sm:text-lg md:text-xl mb-4">
+    <!-- Services Section -->
+    <section id="services" class="relative z-30 py-20 bg-[#f4f1ea] shadow-2xl">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-6xl md:text-7xl font-bold text-[#2d5a4a] mb-6">הקסם הירוק של Terra Li</h2>
+            <p class="text-dark-brown text-2xl font-semibold md:text-3xl max-w-4xl mx-auto mb-12 leading-relaxed">
+                אני מציעה חוויה ייחודית בעולם הטרריומים – מיצירת גנים מיניאטוריים עוצרי נשימה ועד סדנאות יצירה המכניסות את הטבע הביתה.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1: Custom Terrariums -->
+                <div class="bg-white rounded-2xl p-8 text-center flex flex-col items-center shadow-lg transform hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="bg-[#dad7cd]/50 text-[#3a5a40] rounded-full p-4 mb-6 inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                    </div>
+                    <h3 class="text-4xl font-bold text-[#2d5a4a] mb-6">טרריומים בהזמנה אישית</h3>
+                    <p class="text-dark-brown text-2xl font-semibold md:text-3xl max-w-4xl mx-auto mb-12 leading-relaxed">
+                        יצירת טרריום מותאם אישית עבורכם. אני לוקחת בחשבון את הסגנון שלכם,
+                        את תנאי התאורה והחזון שלכם ויוצרת עבורכם גן מיניאטורי
+                        מושלם שיכול לחיות לנצח.
+                    </p>
+                    <p class="text-dark-brown max-w-lg mx-auto mb-12 leading-relaxed text-sm sm:text-base md:text-lg mb-4">
+                        כל טרריום הוא יצירת אמנות ייחודית, המשלבת צמחים, אביזרים וטכניקות עיצוב מתקדמות.
+                    </p>
+                    <a href="mailto:terrali.contact@gmail.com?subject=בקשה לטרריום מותאם אישית" class="mt-auto bg-[#3a5a40] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#588157] transition-colors">הזמינו עכשיו</a>
+                </div>
+                <!-- Service Card 2: Group Workshops -->
+                <div class="bg-white rounded-2xl p-8 text-center flex flex-col items-center shadow-lg transform hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="bg-[#dad7cd]/50 text-[#3a5a40] rounded-full p-4 mb-6 inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                    </div>
+                    <h3 class="text-4xl font-bold text-[#2d5a4a] mb-6">סדנאות גיבוש לקבוצות</h3>
+                    <p class="text-dark-brown text-2xl font-semibold md:text-3xl max-w-4xl mx-auto mb-12 leading-relaxed">
                 סדנאות יצירתיות באווירה קבוצתית מקסימה ומעשירה. תלמדו את היסודות
                 של בניית טרריום, בחירת צמחים וטכניקות תחזוקה. כל משתתף ייקח
                 הביתה טרריום שהכין בעצמו.
-              </p>
-              <div
-                class="bg-gradient-to-r from-brand-gold/10 to-brand-gold/5 p-4 rounded-lg mt-2 w-full max-w-xs mx-auto"
-              >
-                <p
-                  class="font-semibold text-brand-gold text-base sm:text-lg mb-2"
-                >
-                 למי מתאים הקסם הירוק הזה?
-                </p>
-                <p class="text-gray-50 text-sm sm:text-base md:text-lg mb-4">
+                                  </p>
+                                                  <p class="text-dark-brown max-w-lg mx-auto mb-12 leading-relaxed text-sm sm:text-base md:text-lg mb-4">
                   מושלם לחברות, משפחות או קבוצות חברים. חוויה יצירתית משותפת
                   שמחזקת קשרים ומלמדת כישורים חדשים.
                 </p>
-                <a
-                  href="https://wa.me/+972523327588?text=שלום ליאורה, אני מעוניין בסדנאות טרריום קבוצתיות"
-                  class="bg-brand-teal text-white py-2 px-4 rounded-full text-base sm:text-lg font-semibold hover:bg-brand-teal-dark transition-colors inline-block"
-                >
-                  הרשמה לסדנה
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Service 3 -->
-          <div
-            class="relative flex flex-col items-center justify-center text-center rounded-2xl overflow-hidden min-h-[350px] md:min-h-[400px] lg:min-h-[450px] shadow-lg group"
-            style="
-              background-image: url('assets/images/kids.jpeg');
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-            "
-          >
-            <div
-              class="absolute inset-0 bg-brand-brown bg-opacity-60 group-hover:bg-opacity-70 transition duration-300"
-            ></div>
-            <div
-              class="relative z-10 flex flex-col items-center justify-center h-full p-6 sm:p-8"
-            >
-              <h3
-                class="text-2xl sm:text-3xl font-bold text-brand-teal mb-4 drop-shadow-lg"
-              >
-                סדנאות לילדים ונוער
-              </h3>
-              <p class="text-white text-base sm:text-lg md:text-xl mb-4">
-                סדנאות מותאמות לילדים ונוער שמעודדות את הסקרנות והדמיון.
-                חוויה פעילה ומעשירה שמדברת אל הלב ומפתחת את הדלת לעולם
-                הטבע והיצירה.
-              </p>
-              <div
-                class="bg-gradient-to-r from-brand-gold/10 to-brand-gold/5 p-4 rounded-lg mt-2 w-full max-w-xs mx-auto"
-              >
-                <p
-                  class="font-semibold text-brand-gold text-base sm:text-lg mb-2"
-                >
-                 למי מתאים הקסם הירוק הזה?
-                </p>
-                <p class="text-gray-50 text-sm sm:text-base md:text-lg mb-4">
-                  מתאים ליום הולדת, חגים, או פעילות חינוכיות. או סתם כדי לבלות
-                  באופן יצירתי ולחבר לטבע.
-                </p>
-                <a
-                  href="mailto:terrali.contact@gmail.com?subject=בקשה לסדנה לילדים"
-                  class="bg-brand-teal text-white py-2 px-4 rounded-full text-base sm:text-lg font-semibold hover:bg-brand-teal-dark transition-colors inline-block"
-                >
-                  הרשמה לסדנה
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <!-- About Section -->
-      <section id="about" class="py-20 bg-gradient-to-b from-black to-black/90">
-        <div class="container mx-auto px-6">
-          <div class="flex flex-col lg:flex-row items-center gap-12">
-            <!-- Profile Image -->
-            <div class="lg:w-1/3">
-              <div class="relative">
-                <div
-                  class="absolute inset-0 bg-gradient-to-br from-brand-teal/20 to-brand-gold/20 rounded-full transform rotate-6"
-                ></div>
-                <div class="relative bg-white p-4 rounded-full shadow-2xl">
-                  <img
-                    src="assets/images/liora2.jpg"
-                    alt="תמונה של ליאורה מעוז - Terra Li"
-                    class="rounded-full w-full h-auto object-cover"
-                  />
+                    <a href="https://wa.me/+972525439490?text=שלום ליאורה, אני מעוניין בסדנאות טרריום קבוצתיות" target="_blank" class="mt-auto bg-[#3a5a40] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#588157] transition-colors">לפרטים והרשמה</a>
                 </div>
-                <!-- Decorative elements -->
-                <div
-                  class="absolute -top-4 -right-4 w-8 h-8 bg-brand-gold rounded-full opacity-60"
-                ></div>
-                <div
-                  class="absolute -bottom-6 -left-6 w-12 h-12 border-4 border-brand-teal rounded-full opacity-40"
-                ></div>
-              </div>
-            </div>
-
-            <!-- Content -->
-            <div class="lg:w-2/3 text-right space-y-8">
-              <!-- Main heading -->
-              <h2 class="text-4xl lg:text-5xl font-bold text-brand-gold">
-                נעים להכיר, אני ליאורה
-              </h2>
-
-              <!-- Opening statement -->
-              <div
-                class="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg"
-              >
-                <p class="text-gray-900 text-xl leading-relaxed">
-                  אמנית טרריום מובילה בישראל ומעבירת סדנאות יצירתיות. אני מאמינה
-                  שטרריום הוא הרבה יותר מצמחים בכלי - הוא משיב אלינו את הקשר
-                  לטבע ומביא שלווה ויופי לבית שלנו.
-                </p>
-              </div>
-
-              <!-- Key points grid -->
-              <div class="grid md:grid-cols-2 gap-6">
-                <!-- Experience card -->
-                <div
-                  class="bg-gradient-to-br from-brand-teal/10 to-brand-gold/10 backdrop-blur-sm p-6 rounded-2xl border border-brand-teal/20"
-                >
-                  <h3 class="text-2xl font-bold text-brand-teal mb-4">
-                    מובילה בתחום
-                  </h3>
-                  <p class="text-white leading-relaxed">
-                    אחת מאמניות הטרריום המבוקשות בישראל, עם אלפי תלמידים מסדנאות
-                    ומאות טרריומים מותאמים אישית שיצרתי.
-                  </p>
-                </div>
-
-                <!-- Methodology card -->
-                <div
-                  class="bg-gradient-to-br from-brand-gold/10 to-brand-teal/10 backdrop-blur-sm p-6 rounded-2xl border border-brand-gold/20"
-                >
-                  <h3 class="text-2xl font-bold text-brand-gold mb-4">
-                    גישה ייחודית
-                  </h3>
-                  <p class="text-white leading-relaxed">
-                    כל טרריום מספר סיפור ייחודי ומאפשר לכם להיות שותפים ביצירה.
-                    התוצאה? חוויה מאלפת, מרגיעה ומחברת לטבע.
-                  </p>
-                </div>
-              </div>
-
-              <!-- What I bring to the table -->
-              <div
-                class="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg"
-              >
-                <h3 class="text-2xl font-bold text-brand-teal mb-6">
-                  מה אני מציעה?
-                </h3>
-                <div
-                  class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-900"
-                >
-                  <div class="flex items-center gap-3">
-                    <div class="w-3 h-3 bg-brand-teal rounded-full"></div>
-                    <span class="font-semibold">טרריומים מותאמים</span> - עיצוב אישי
-                    לכל בית וסגנון
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div class="w-3 h-3 bg-brand-gold rounded-full"></div>
-                    <span class="font-semibold">סדנאות מקצועיות</span> - חוויות יצירתיות
-                    לכל הגילאים
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div class="w-3 h-3 bg-brand-teal rounded-full"></div>
-                    <span class="font-semibold">ידע בוטני</span> - אקולוגיה וטיפול
-                    בצמחים במיניאטור
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div class="w-3 h-3 bg-brand-gold rounded-full"></div>
-                    <span class="font-semibold">הדרכה מלאה</span> - ליווי אישי
-                    בתחזוקה וטיפול
-                  </div>
-                </div>
-              </div>
-
-              <!-- Call to action -->
-              <div
-                class="bg-gradient-to-r from-brand-teal/20 to-brand-gold/20 backdrop-blur-sm p-8 rounded-2xl border border-brand-gold/30"
-              >
-                <h3 class="text-2xl font-bold text-brand-gold mb-4">
-                  מוכנים להתחיל?
-                </h3>
-                <p class="text-white text-lg leading-relaxed mb-6">
-                  ניפגש לשיחה ראשונית, שבה אכיר את הסגנון שלכם ונבנה יחד את הטרריום
-                  המושלם עבורכם או נתאים סדנה קבוצתית מדהימה.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="mailto:terrali.contact@gmail.com?subject=בקשה לפגישת היכרות"
-                    class="bg-brand-teal text-white py-3 px-6 rounded-full font-semibold hover:bg-brand-teal-dark transition-colors text-center"
-                  >
-                    בואו נקבע פגישה
-                  </a>
-                  <a
-                    href="https://wa.me/+972523327588?text=שלום ליאורה, אשמח לשוחח על סדנה או טרריום מותאם אישית"
-                    class="border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black py-3 px-6 rounded-full font-semibold transition-colors text-center"
-                  >
-                    שליחת וואטסאפ
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Portfolio Section -->
-      <section
-        id="portfolio"
-        class="py-20 bg-gradient-to-b from-black/90 to-black"
-      >
-        <div class="container mx-auto px-6 text-center">
-          <h2 class="text-6xl font-bold mb-4 text-brand-gold">
-            גלריית הטרריומים של Terra Li
-          </h2>
-          <p class="text-gray-50 text-3xl max-w-3xl mx-auto mb-12">
-            כל טרריום כאן הוא עולם קטן שמספר סיפור ייחודי. עולמות מיניאטוריים שנוצרו
-            באהבה גדולה ותשומת לב לפרטים. אני מזמינה אתכם להתרשם ולדמיין
-            את הטרריום המושלם שנוכל ליצור יחד.
-          </p>
-
-          <!-- Enhanced Gallery -->
-          <div class="masonry-grid">
-            <!-- Large Featured Image -->
-            <div
-              class="masonry-item large cursor-pointer"
-              onclick="openLightbox('assets/images/WhatsApp Image 2025-06-09 at 17.25.58.jpeg', 'טרריום יער מדהים')"
-            >
-              <div class="image-container">
-                <img
-                  src="assets/images/WhatsApp Image 2025-06-09 at 17.25.58.jpeg"
-                  alt="טרריום יער מדהים"
-                  class="portfolio-image"
-                />
-                <div class="image-overlay">
-                  <div class="overlay-content">
-                    <h3 class="text-white text-2xl font-bold mb-2">
-                      טרריום יער מדהים
-                    </h3>
-                    <p class="text-white/90">עולם טבעי קטן ומקסים</p>
-                    <div class="mt-4">
-                      <span
-                        class="inline-block bg-white/20 text-white px-3 py-1 rounded-full text-sm"
-                        >לחץ להצגה מורחבת</span
-                      >
+                <!-- Service Card 3: Kids Workshops -->
+                <div class="bg-white rounded-2xl p-8 text-center flex flex-col items-center shadow-lg transform hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="bg-[#dad7cd]/50 text-[#3a5a40] rounded-full p-4 mb-6 inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-2a6 6 0 00-12 0v2" /></svg>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Regular Images -->
-            <div
-              class="masonry-item cursor-pointer"
-              onclick="openLightbox('assets/images/WhatsApp Image 2025-06-09 at 17.26.01.jpeg', 'טרריום סוקולנטים')"
-            >
-              <div class="image-container">
-                <img
-                  src="assets/images/WhatsApp Image 2025-06-09 at 17.26.01.jpeg"
-                  alt="טרריום סוקולנטים"
-                  class="portfolio-image"
-                />
-                <div class="image-overlay">
-                  <div class="overlay-content">
-                    <h3 class="text-white text-lg font-bold">טרריום סוקולנטים</h3>
-                    <p class="text-white/90 text-sm mt-1">צמחים חושנים ומדהימים</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="masonry-item cursor-pointer"
-              onclick="openLightbox('assets/images/WhatsApp Image 2025-06-09 at 17.26.02.jpeg', 'טרריום צמחים טרופיים')"
-            >
-              <div class="image-container">
-                <img
-                  src="assets/images/WhatsApp Image 2025-06-09 at 17.26.02.jpeg"
-                  alt="טרריום צמחים טרופיים"
-                  class="portfolio-image"
-                />
-                <div class="image-overlay">
-                  <div class="overlay-content">
-                    <h3 class="text-white text-lg font-bold">
-                      טרריום צמחים טרופיים
-                    </h3>
-                    <p class="text-white/90 text-sm mt-1">אווירה נעימה ומרגיעה</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="masonry-item tall cursor-pointer"
-              onclick="openLightbox('assets/images/WhatsApp Image 2025-06-09 at 17.26.03.jpeg', 'טרריום מינימליסטי')"
-            >
-              <div class="image-container">
-                <img
-                  src="assets/images/WhatsApp Image 2025-06-09 at 17.26.03.jpeg"
-                  alt="טרריום מינימליסטי"
-                  class="portfolio-image"
-                />
-                <div class="image-overlay">
-                  <div class="overlay-content">
-                    <h3 class="text-white text-lg font-bold">
-                      טרריום מינימליסטי
-                    </h3>
-                    <p class="text-white/90 text-sm mt-1">פשטות ואלגנטיות</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="masonry-item cursor-pointer"
-              onclick="openLightbox('assets/images/WhatsApp Image 2025-06-09 at 17.26.04.jpeg', 'טרריום צבעוני')"
-            >
-              <div class="image-container">
-                <img
-                  src="assets/images/WhatsApp Image 2025-06-09 at 17.26.04.jpeg"
-                  alt="טרריום צבעוני"
-                  class="portfolio-image"
-                />
-                <div class="image-overlay">
-                  <div class="overlay-content">
-                    <h3 class="text-white text-lg font-bold">טרריום צבעוני</h3>
-                    <p class="text-white/90 text-sm mt-1">
-                      צבעים חיים ומרגשים
+                    <h3 class="text-4xl font-bold text-[#2d5a4a] mb-6">סדנאות לילדים ונוער</h3>
+                    <p class="text-dark-brown text-2xl font-semibold md:text-3xl max-w-4xl mx-auto mb-12 leading-relaxed">
+                        פעילות מעשירה המעודדת סקרנות, דמיון וחיבור לטבע.
+                        חוויה יחודית לימי הולדת, חוגים או סתם בילוי יצירתי ומהנה. כל משתתף מקבל טרריום אישי.
                     </p>
-                  </div>
+                    <p class="text-dark-brown max-w-lg mx-auto mb-12 leading-relaxed text-sm sm:text-base md:text-lg mb-4">
+                        הילדים ילמדו על צמחים, אקולוגיה ויצירתיות, ויקבלו טרריום אישי שיצרו בעצמם.
+                    </p>
+                    <a href="mailto:terrali.contact@gmail.com?subject=בקשה לסדנה לילדים" class="mt-auto bg-[#3a5a40] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#588157] transition-colors">תאמו סדנה</a>
                 </div>
-              </div>
             </div>
-
-            <div
-              class="masonry-item cursor-pointer"
-              onclick="openLightbox('assets/images/WhatsApp Image 2025-06-09 at 17.26.05.jpeg', 'טרריום עם פרחים')"
-            >
-              <div class="image-container">
-                <img
-                  src="assets/images/WhatsApp Image 2025-06-09 at 17.26.05.jpeg"
-                  alt="טרריום עם פרחים"
-                  class="portfolio-image"
-                />
-                <div class="image-overlay">
-                  <div class="overlay-content">
-                    <h3 class="text-white text-lg font-bold">
-                      טרריום עם פרחים
-                    </h3>
-                    <p class="text-white/90 text-sm mt-1">רומנטי ומקסים</p>
-                  </div>
-                </div>
-              </div>
+                        <ul class="list-disc text-dark-brown list-inside text-xl font-semibold md:text-2xl max-w-4xl mx-auto mt-4">
+                    <li>ליווי אישי ללא עלות</li>
+                    <li>במידה והטרריום לא נקלט – הביאו אותו אלי לריפוי</li>
+                    <li>טרריום אישי לכל משתתף</li>
+                    <li>מגיעה עד אליכם</li>
+                    <li>סדנאות גיבוש לקבוצות</li>
+                </ul>
             </div>
-          </div>
-
-          <!-- Call to Action after portfolio -->
-          <div class="mt-16">
-            <div
-              class="bg-gradient-to-r from-brand-gold/10 to-brand-teal/10 p-8 rounded-3xl border-2 border-brand-gold/20 max-w-2xl mx-auto"
-            >
-              <h3 class="text-3xl font-bold text-brand-teal mb-4">
-                בואו נתחיל 
-              </h3>
-              <p class="text-gray-50 text-xl mb-6">
-               נכיר ונבנה יחד את הטרריום המושלם עבורכם.
-              </p>
-              <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="mailto:terrali.contact@gmail.com?subject=בקשה לטרריום מותאם אישית"
-                  class="bg-brand-teal text-xl text-white py-3 px-6 rounded-full font-semibold hover:bg-brand-teal-dark transition-colors"
-                >
-                  שלחו מייל לתיאום פגישה
-                </a>
-                <a
-                  href="https://wa.me/+972523327588?text=שלום ליאורה, אשמח לשוחח איתך על טרריום מותאם אישית או סדנה"
-                  class="border-2 border-brand-teal text-xl text-brand-teal hover:bg-brand-teal hover:text-white py-3 px-6 rounded-full font-semibold transition-colors"
-                >
-                  שליחת וואטסאפ
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+        
+    </section>
 
-      <!-- Lightbox Modal -->
-      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <div class="lightbox-content">
-          <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-          <img id="lightbox-image" src="" alt="" />
-          <div id="lightbox-caption" class="lightbox-caption"></div>
-        </div>
-      </div>
-
-      <!-- Process Section -->
-      <section
-        id="process"
-        class="flex flex-col justify-center text-center relative overflow-hidden bg-gradient-to-b from-black to-black/90 py-20"
-      >
-        <div class="px-4 md:px-8 py-8">
-          <h2 class="text-6xl font-bold mb-4 text-brand-gold">
-            הדרך לטרריום המושלם: כך נעשה את זה יחד
-          </h2>
-          <p class="text-lg text-gray-300 text-xl max-w-3xl mx-auto -mb-2">
-            אני מאמינה בחוויה יצירתית מלאה ובתהליך עבודה שמעניק שמחה ויצירתיות.<br />
-            המסע המשותף שלנו ליצירת טרריום מורכב מארבעה שלבים מרכזיים
-          </p>
-        </div>
-
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 flex-1 h-full"
-        >
-          <!-- Step 1 -->
-          <div
-            class="h-full flex flex-col items-center justify-center text-center p-6 relative"
-            style="
-              background-image: url('assets/images/WhatsApp Image 2025-06-09 at 17.26.06.jpeg');
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-            "
-          >
-            <div class="absolute inset-0 bg-brand-brown bg-opacity-50"></div>
-            <div class="relative z-10 text-white">
-              <div
-                class="bg-brand-teal text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold"
-              >
-                1
-              </div>
-              <h3 class="text-2xl font-bold mb-4">פגישת היכרות ובחירת סגנון</h3>
-              <p class="text-gray-200 text-lg">
-                בשיחה נעימה נכיר לעומק ונבחר יחד את הסגנון המתאים לכם.
-                נבחר צמחים, צבעים וסגנון שיתאים לבית שלכם.
-              </p>
-            </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div
-            class="h-full flex flex-col items-center justify-center text-center p-6 relative"
-            style="
-              background-image: url('assets/images/WhatsApp Image 2025-06-09 at 17.26.07.jpeg');
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-            "
-          >
-            <div class="absolute inset-0 bg-brand-brown bg-opacity-50"></div>
-            <div class="relative z-10 text-white">
-              <div
-                class="bg-brand-teal text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold"
-              >
-                2
-              </div>
-              <h3 class="text-2xl font-bold mb-4">בחירת חומרים והכנה</h3>
-              <p class="text-gray-200 text-lg">
-                נבחר יחד את החומרים והצמחים המתאימים לטרריום שלכם.
-                נכין את הכלי וניצור את הבסיס המושלם.
-              </p>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div
-            class="h-full flex flex-col items-center justify-center text-center p-6 relative"
-            style="
-              background-image: url('assets/images/WhatsApp Image 2025-06-09 at 17.26.08.jpeg');
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-            "
-          >
-            <div class="absolute inset-0 bg-brand-brown bg-opacity-50"></div>
-            <div class="relative z-10 text-white">
-              <div
-                class="bg-brand-teal text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold"
-              >
-                3
-              </div>
-              <h3 class="text-2xl font-bold mb-4">יצירה ועיצוב</h3>
-              <p class="text-gray-200 text-lg">
-                נשתול את הצמחים, נבנה את השכבות
-                וניצור יחד את העולם הקטן והמיוחד שלכם.
-              </p>
-            </div>
-          </div>
-
-          <!-- Step 4 -->
-          <div
-            class="h-full flex flex-col items-center justify-center text-center p-6 relative"
-            style="
-              background-image: url('assets/images/WhatsApp Image 2025-06-09 at 17.26.09.jpeg');
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-            "
-          >
-            <div class="absolute inset-0 bg-brand-brown bg-opacity-50"></div>
-            <div class="relative z-10 text-white">
-              <div
-                class="bg-brand-teal text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold"
-              >
-                4
-              </div>
-              <h3 class="text-2xl font-bold mb-4">העברה והנאה</h3>
-              <p class="text-gray-200 text-lg">
-                הרגע המרגש ביותר! תקבלו את הטרריום המושלם שלכם עם הוראות
-                תחזוקה מפורטות וליווי מלא לאורך זמן.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials Section -->
-      <section
-        id="testimonials"
-        class="py-24 relative overflow-hidden bg-gradient-to-b from-black/90 to-black"
-      >
-        <div class="container mx-auto px-6 text-center relative z-10">
-          <div class="mb-16">
-            <h2
-              class="text-6xl font-bold mb-6 bg-gradient-to-r from-brand-gold to-brand-teal bg-clip-text text-brand-gold"
-            >
-              מילה מהמשתתפים שלי
-            </h2>
-            <p class="text-xl text-gray-50 max-w-4xl mx-auto leading-relaxed">
-              השמחה הגדולה ביותר שלי היא לראות את השמחה והגאווה של המשתתפים בסדנאות. <br />
-              <span class="font-semibold text-brand-teal"
-                >הנה כמה מילים מהם:</span
-              >
+    <!-- Collaborations Section -->
+    <section id="collaborations" class="py-16 bg-white overflow-hidden">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#2d5a4a] mb-4">שותפות והכרה</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+                גאה לעבוד עם מוסדות מובילים ולהיות מוכרת בתחום הטרריומים בישראל
             </p>
-          </div>
-
-          <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
-            <!-- Testimonial 1 -->
-            <div
-              class="group bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden border border-gray-100"
-            >
-              <!-- Gradient overlay on hover -->
-              <div
-                class="absolute inset-0 bg-gradient-to-br from-brand-teal/5 to-brand-gold/5 opacity-0 transition-opacity duration-500"
-              ></div>
-
-              <!-- Quote icon -->
-              <div
-                class="absolute top-8 left-8 text-brand-teal/30 group-hover:text-brand-teal/60 transition-all duration-300 transform group-hover:scale-110"
-              >
-                <svg
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.318.142-.686.238-1.028.466-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.945-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.318.142-.686.238-1.028.466-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.945-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 17.5 10z"
-                  />
-                </svg>
-              </div>
-
-              <div class="pt-16 text-right relative z-10">
-                <p
-                  class="text-gray-700 italic mb-8 text-xl leading-relaxed font-medium"
-                >
-                  "הגענו לשוש מבולבלים ועם המון חששות, והיא פשוט הפכה את כל
-                  התהליך לחוויה. היא קלטה את הטעם שלנו מיד, ניהלה הכל ביד רמה
-                  ומקצועיות, והתוצאה הסופית... פשוט בית מושלם. ממליצים בחום!"
-                </p>
-
-                <div class="flex items-center justify-end gap-6">
-                  <div class="text-right">
-                    <p class="font-bold text-brand-teal text-xl">
-                      יהורם ועליזה שטרן
-                    </p>
-                    <p class="text-gray-500 text-base">עיצוב פנטהאוז בהרצליה</p>
-                  </div>
-                  <div
-                    class="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <span class="text-brand-teal font-bold text-xl">י ש</span>
-                  </div>
+            <!-- Carousel Container -->
+            <div class="relative">
+                <div class="carousel-track flex items-center gap-12 transition-transform duration-500 ease-in-out" id="collab-carousel">
+                    <!-- Carousel items will be populated by JavaScript -->
                 </div>
-
-                <!-- Rating stars -->
-                <div class="flex justify-end mt-6 gap-1 filter drop-shadow-sm">
-                  <svg
-                    class="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                    />
-                  </svg>
-                  <svg
-                    class="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                    />
-                  </svg>
-                  <svg
-                    class="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                    />
-                  </svg>
-                  <svg
-                    class="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                    />
-                  </svg>
-                  <svg
-                    class="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                    />
-                  </svg>
-                </div>
-              </div>
             </div>
-
-            <!-- Testimonial 2 -->
-            <div
-              class="group bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden border border-gray-100"
-            >
-              <!-- Gradient overlay on hover -->
-              <div
-                class="absolute inset-0 bg-gradient-to-br from-brand-gold/5 to-brand-teal/5 opacity-0 transition-opacity duration-500"
-              ></div>
-
-              <!-- Quote icon -->
-              <div
-                class="absolute top-8 left-8 text-brand-gold/30 group-hover:text-brand-gold/60 transition-all duration-300 transform group-hover:scale-110"
-              >
-                <svg
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.318.142-.686.238-1.028.466-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.945-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.318.142-.686.238-1.028.466-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.945-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 17.5 10z"
-                  />
-                </svg>
-              </div>
-
-              <div class="pt-16 text-right relative z-10">
-                <p
-                  class="text-gray-700 italic mb-8 text-xl leading-relaxed font-medium"
-                >
-                  "שוש הפכה את הדירה הישנה שלנו לבית חלומות. היא הצליחה להבין
-                  בדיוק מה אנחנו רוצים ואפילו הציעה פתרונות שלא חשבנו עליהם.
-                  העבודה הייתה מקצועית, מדויקת ובזמן. תוצאה מעל הציפיות!"
-                </p>
-
-                <div class="flex items-center justify-end gap-6">
-                  <div class="text-right">
-                    <p class="font-bold text-brand-teal text-xl">
-                      מיכל וניר מועלם
-                    </p>
-                    <p class="text-gray-500 text-base">עיצוב דירה בתל אביב</p>
-                  </div>
-                  <div
-                    class="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <span class="font-bold text-brand-teal text-xl">מ ל</span>
-                  </div>
-                </div>
-
-                <!-- Rating stars -->
-                <div class="flex justify-end mt-6 gap-1 filter drop-shadow-sm">
-                  <svg
-                    class="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                    />
-                  </svg>
-                  <svg
-                    class="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                    />
-                  </svg>
-                  <svg
-                    class="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                    />
-                  </svg>
-                  <svg
-                    class="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                    />
-                  </svg>
-                  <svg
-                    class="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <section id="contact" class="contact-bg py-20 relative overflow-hidden">
-        <div
-          class="container mx-auto px-6 flex justify-center items-center min-h-[300px] relative z-10"
-        >
-          <div
-            class="bg-gradient-to-br backdrop-blur-sm from-brand-gold/10 to-brand-teal/10 rounded-3xl shadow-3xl border-2 border-brand-gold/20 p-10 max-w-xl w-full text-center flex flex-col items-center gap-6 animate-fadeInUp"
-          >
-            <div class="flex flex-col items-center gap-2">
-              <h2 class="text-5xl font-bold text-brand-gold">צרו קשר</h2>
-              <p class="text-xl text-brand-gold mb-2">
-                אני זמינה לשאלות, ייעוץ או שיחה ראשונית!
-              </p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-[#2d5a4a]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                <div class="lg:w-1/3 w-full">
+                    <img src="assets/images/liora2.jpg" alt="תמונה של ליאורה מעוז - Terra Li" class="rounded-2xl w-full h-auto object-cover shadow-2xl transform lg:rotate-[-3deg] transition-transform hover:rotate-0 hover:scale-105">
+                </div>
+                <div class="lg:w-2/3 text-center lg:text-right text-white">
+                    <h2 class="text-5xl lg:text-6xl font-bold">נעים להכיר, אני ליאורה</h2>
+                    <p class="text-xl text-[#a3b18a] mt-2 mb-6">אמנית טרריום ומובילת סדנאות יצירה</p>
+                    <div class="space-y-6 text-xl text-gray-200 leading-relaxed">
+                        <p class="text-2xl font-semibold md:text-3xl max-w-4xl mx-auto mb-12 leading-relaxed">
+                            אני מאמינה שטרריום הוא הרבה יותר מצמחים בכלי זכוכית – הוא שער לעולם שלם של טבע, שלווה ויופי, ממש אצלכם בבית. כל יצירה היא סיפור, וכל סדנה היא מסע משותף אל תוך הקסם הירוק.
+                        </p>
+                        <p class="text-2xl font-semibold md:text-3xl max-w-4xl mx-auto mb-12 leading-relaxed">
+                            עם ניסיון של שנים, מאות טרריומים שיצרתי באהבה ומאות לקוחות מרוצים, אני כאן כדי לחלוק אתכם את הידע והתשוקה שלי, וליצור יחד אתכם עולמות קטנים ומרהיבים.
+                        </p>
+                    </div>
+                    </div>
+                    <div class="mt-8 flex gap-4 justify-center lg:justify-start">
+                         <a href="mailto:terrali.contact@gmail.com?subject=בקשה לפגישת היכרות" class="bg-[#a3b18a] text-[#2d5a4a] py-3 px-6 rounded-full font-semibold hover:bg-white transition-colors">בואו נדבר</a>
+                         <a href="https://wa.me/+972525439490?text=שלום ליאורה, אשמח לשוחח על סדנה או טרריום" target="_blank" class="border-2 border-[#a3b18a] text-[#a3b18a] py-3 px-6 rounded-full font-semibold hover:bg-[#a3b18a] hover:text-[#2d5a4a] transition-colors">שליחת וואטסאפ</a>
+                    </div>
+                </div>
             </div>
-
-            <div class="flex flex-col gap-4 w-full">
-              <a
-                href="mailto:terrali.contact@gmail.com?subject=פנייה לסדנאות טרריום"
-                class="flex items-center gap-3 bg-brand-teal hover:bg-brand-gold text-white hover:text-brand-teal hover:scale-105 font-bold py-3 px-8 rounded-full text-xl shadow-lg transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-brand-teal/40 justify-center"
-              >
-                <span>שלחו הודעה במייל</span>
-              </a>
-
-              <a
-                href="https://wa.me/+972523327588?text=שלום ליאורה, אני מעוניין בסדנאות טרריום"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center gap-3 hover:border-brand-gold border-2 border-brand-teal bg-brand-teal text-white hover:scale-105 hover:text-white font-bold py-3 px-8 rounded-full text-xl shadow-lg transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-brand-gold/40 justify-center"
-              >
-                <span>שלחו הודעה בוואטסאפ</span>
-              </a>
-            </div>
-          </div>
         </div>
-      </section>
-    </main>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-[#f4f1ea]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-7xl md:text-8xl font-bold text-[#2d5a4a] mb-4">גלריית הטרריומים</h2>
+                                    <p class=" text-2xl font-semibold md:text-3xl max-w-4xl mx-auto mb-12 leading-relaxed">
+                כל טרריום הוא עולם קטן שמספר סיפור ייחודי. הצצה לעולמות מיניאטוריים שנוצרו באהבה ותשומת לב לפרטים.
+            </p>
+            <!-- Enhanced Interactive Gallery -->
+            <div class="masonry-grid">
+                <!-- Gallery Item 1 - Featured Large -->
+                <div class="masonry-item large" data-category="יער">
+                    <div class="image-container">
+                        <img class="portfolio-image" src="assets/images/gallery1.jpeg" alt="טרריום יער מדהים" onclick="openLightbox('assets/images/gallery1.jpeg', 'טרריום יער מדהים')">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="text-2xl font-bold text-white mb-2">עולם יער קסום</h3>
+                                <p class="text-gray-200 text-center">גן מיניאטורי עם צמחיית יער טבעית ואווירה קסומה</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="masonry-item" data-category="סוקולנטים">
+                    <div class="image-container">
+                        <img class="portfolio-image" src="assets/images/gallery2.jpg" alt="טרריום סוקולנטים" onclick="openLightbox('assets/images/gallery2.jpg', 'טרריום סוקולנטים')">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="text-xl font-bold text-white mb-2">גן המדבר</h3>
+                                <p class="text-gray-200 text-center">צמחי סוקולנט יפהפיים בעיצוב מינימליסטי</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 - Tall -->
+                <div class="masonry-item tall" data-category="טרופי">
+                    <div class="image-container">
+                        <img class="portfolio-image" src="assets/images/gallery3.jpeg" alt="טרריום צמחים טרופיים" onclick="openLightbox('assets/images/gallery3.jpeg', 'טרריום צמחים טרופיים')">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="text-xl font-bold text-white mb-2">ג'ונגל מיניאטורי</h3>
+                                <p class="text-gray-200 text-center">צמחייה טרופית עשירה ומגוונת באווירה לחה</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="masonry-item" data-category="מינימליסטי">
+                    <div class="image-container">
+                        <img class="portfolio-image" src="assets/images/gallery4.jpg" alt="טרריום מינימליסטי" onclick="openLightbox('assets/images/gallery4.jpg', 'טרריום מינימליסטי')">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="text-xl font-bold text-white mb-2">פשטות אלגנטית</h3>
+                                <p class="text-gray-200 text-center">עיצוב נקי ומינימליסטי לחלל מודרני</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="masonry-item" data-category="צבעוני">
+                    <div class="image-container">
+                        <img class="portfolio-image" src="assets/images/gallery5.jpeg" alt="טרריום צבעוני" onclick="openLightbox('assets/images/gallery5.jpeg', 'טרריום צבעוני')">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="text-xl font-bold text-white mb-2">פרח צבעים</h3>
+                                <p class="text-gray-200 text-center">שילוב מרהיב של צבעים וטקסטורות</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="masonry-item">
+                    <div class="image-container">
+                        <img class="portfolio-image" src="assets/images/gallery6.jpeg" alt="טרריום עם פרחים" onclick="openLightbox('assets/images/gallery6.jpeg', 'טרריום עם פרחים')">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="text-xl font-bold text-white mb-2">גן פורח</h3>
+                                <p class="text-gray-200 text-center">פריחה עדינה ויפהפיה במרחב זכוכית</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="masonry-item" data-category="מותאם">
+                    <div class="image-container">
+                        <img class="portfolio-image" src="assets/images/custom.jpeg" alt="טרריום בהתאמה אישית" onclick="openLightbox('assets/images/custom.jpeg', 'טרריום בהתאמה אישית')">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="text-xl font-bold text-white mb-2">עיצוב אישי</h3>
+                                <p class="text-gray-200 text-center">יצירה ייחודית הבנויה לפי חזון האקליקה</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="masonry-item" data-category="סדנה">
+                    <div class="image-container">
+                        <img class="portfolio-image" src="assets/images/kids.jpeg" alt="סדנת ילדים" onclick="openLightbox('assets/images/kids.jpeg', 'סדנת ילדים')">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="text-xl font-bold text-white mb-2">יצירה במשפחה</h3>
+                                <p class="text-gray-200 text-center">רגעי יצירה משותפים וחוויה בלתי נשכחת</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80" onclick="closeLightbox(event)">
+        <div class="relative p-4">
+            <span class="absolute -top-2 -right-2 text-white text-4xl cursor-pointer" onclick="closeLightbox(event)">&times;</span>
+            <img id="lightbox-image" src="" alt="" class="max-w-[90vw] max-h-[85vh] rounded-lg">
+            <div id="lightbox-caption" class="text-center text-gray-300 mt-2 text-lg"></div>
+        </div>
+    </div>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-[#2d5a4a]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-4">הדרך לטרריום המושלם</h2>
+                                    <p class=" text-2xl font-semibold text-white md:text-3xl max-w-2xl mx-auto mb-12 leading-relaxed">
+                תהליך העבודה פשוט, מהנה ומבטיח תוצאה שתאהבו. כך נעשה את זה יחד:
+            </p>
+            <div class="relative">
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-white/20"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- Step 1 -->
+                    <div class="relative rounded-2xl overflow-hidden min-h-[300px] bg-cover bg-center" style="background-image: url('assets/images/step1.jpeg');">
+                        <div class="absolute inset-0 bg-[#2d5a4a]/60"></div>
+                        <div class="relative z-10 flex flex-col items-center justify-center h-full p-6 text-white text-center">
+                            <div class="bg-[#f4f1ea] text-[#2d5a4a] w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold border-4 border-[#2d5a4a] shadow-lg mb-4">1</div>
+                            <h3 class="text-4xl font-bold text-green-100 mb-2">שיחת היכרות</h3>
+                            <p class="text-gray-200 text-2xl font-semibold">בהדרכה הראשונית, נדמיין את החזון ונבחר יחד את הסגנון, הצמחים והכלי האידיאלי.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative rounded-2xl overflow-hidden min-h-[300px] bg-cover bg-center" style="background-image: url('assets/images/step2.jpeg');">
+                        <div class="absolute inset-0 bg-[#2d5a4a]/60"></div>
+                        <div class="relative z-10 flex flex-col items-center justify-center h-full p-6 text-white text-center">
+                            <div class="bg-[#f4f1ea] text-[#2d5a4a] w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold border-4 border-[#2d5a4a] shadow-lg mb-4">2</div>
+                            <h3 class="text-4xl font-bold text-green-100 mb-2">עיצוב ויצירה</h3>
+                            <p class="text-gray-200 text-2xl font-semibold">כאן הקסם קורה, עיצוב ובניית הטרריום במקצועיות ותשומת לב.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative rounded-2xl overflow-hidden min-h-[300px] bg-cover bg-center" style="background-image: url('assets/images/step3.jpeg');">
+                        <div class="absolute inset-0 bg-[#2d5a4a]/60"></div>
+                        <div class="relative z-10 flex flex-col items-center justify-center h-full p-6 text-white text-center">
+                            <div class="bg-[#f4f1ea] text-[#2d5a4a] w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold border-4 border-[#2d5a4a] shadow-lg mb-4">3</div>
+                            <h3 class="text-4xl font-bold text-green-100 mb-2">הדרכה וליווי</h3>
+                            <p class="text-gray-200 text-2xl font-semibold">תקבלו הדרכה מלאה על תחזוקה וטיפול כדי שהטרריום יישאר יפהפה לאורך זמן.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="relative rounded-2xl overflow-hidden min-h-[300px] bg-cover bg-center" style="background-image: url('assets/images/step4.jpg');">
+                        <div class="absolute inset-0 bg-[#2d5a4a]/60"></div>
+                        <div class="relative z-10 flex flex-col items-center justify-center h-full p-6 text-white text-center">
+                            <div class="bg-[#f4f1ea] text-[#2d5a4a] w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold border-4 border-[#2d5a4a] shadow-lg mb-4">4</div>
+                            <h3 class="text-4xl font-bold text-green-100 mb-2">הנאה צרופה</h3>
+                            <p class="text-gray-200 text-2xl font-semibold">הרגע המרגש! הטרריום שלכם מוכן להכניס טבע, שלווה ויופי לחייכם.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+              <p class="text-xl text-brand-gold font-bold">אין צורך להביא דבר מלבד מצב רוח טוב!</p>
+              <ul class="list-disc list-inside text-lg mt-2 text-brand-gold">
+                <li>כלי זכוכית מיוחדים</li>
+                <li>מצעי שתילה איכותיים</li>
+                <li>צמחים ייחודיים לטרריום סגור</li>
+                <li>מיניאטורות מדהימות לקישוט</li>
+              </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-[#f4f1ea]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl md:text-6xl font-bold text-[#2d5a4a] mb-4">מה המשתתפים מספרים</h2>
+            <p class="text-dark-green text-2xl font-semibold">
+                השמחה הגדולה ביותר שלי היא לראות את החיוך שלכם. הנה כמה מילים חמות:
+            </p>
+            <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-2xl text-right relative shadow-lg">
+                    <p class="text-gray-600 italic text-xl mb-6">"הסדנה עם ליאורה הייתה חוויה מדהימה! היא העבירה את הידע בצורה כל כך נעימה ומקצועית. יצאתי עם טרריום מהמם ועם המון השראה. ממליצה בחום!"</p>
+                    <div class="flex items-center justify-end gap-4">
+                        <div class="text-right">
+                            <p class="font-bold text-[#3a5a40]">דנה כהן</p>
+                            <p class="text-sm text-gray-500">משתתפת בסדנה קבוצתית</p>
+                        </div>
+                        <img class="w-14 h-14 rounded-full object-cover" src="assets/images/gallery2.jpg" alt="דנה כהן">
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-2xl text-right relative shadow-lg">
+                    <p class="text-gray-600 italic text-xl mb-6">"הזמנתי מליאורה טרריום במתנה ליום הולדת של אמא שלי. התוצאה הייתה פשוט עוצרת נשימה, הרבה מעבר למה שדמיינתי. שירות אישי ואדיב. תודה רבה!"</p>
+                    <div class="flex items-center justify-end gap-4">
+                        <div class="text-right">
+                            <p class="font-bold text-[#3a5a40]">יובל לוי</p>
+                            <p class="text-sm text-gray-500">הזמנת טרריום אישית</p>
+                        </div>
+                        <img class="w-14 h-14 rounded-full object-cover" src="assets/images/gallery4.jpg" alt="יובל לוי">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="py-20 bg-cover bg-center" style="background-image: url('assets/images/forSale.jpeg');">
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <div class="max-w-xl mx-auto bg-brand-purple p-6 md:p-8 rounded-2xl shadow-2xl">
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-4">מוכנים להתחיל את המסע?</h2>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8">
+                אני זמינה לכל שאלה, ייעוץ או שיחת היכרות. השאירו פרטים ואחזור אליכם בהקדם.
+            </p>
+
+            <form action="https://formspree.io/f/mvgqqkqq" method="POST" class="text-right">
+
+                <div class="mb-4">
+                    <label for="name" class="block text-white text-lg mb-2">שם מלא</label>
+                    <input type="text" id="name" name="name" placeholder="ישראל ישראלי" required
+                           class="w-full p-3 rounded-md bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#a3b18a]">
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="block text-white text-lg mb-2">כתובת מייל</label>
+                    <input type="email" id="email" name="email" placeholder="israel@example.com" required
+                           class="w-full p-3 rounded-md bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#a3b18a]">
+                </div>
+
+                <div class="mb-4">
+                    <label for="subject" class="block text-white text-lg mb-2">נושא הפנייה</label>
+                    <select id="subject" name="subject" required
+                            class="w-full p-3 rounded-md bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#a3b18a]">
+                        <option value="ייעוץ לגבי טרריום">ייעוץ לגבי טרריום</option>
+                        <option value="הרשמה לסדנה">הרשמה לסדנה</option>
+                        <option value="שאלה כללית">שאלה כללית</option>
+                        <option value="אחר">אחר</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label for="message" class="block text-white text-lg mb-2">הודעה</label>
+                    <textarea id="message" name="message" rows="4" placeholder="אשמח לקבל פרטים נוספים על..." required
+                              class="w-full p-3 rounded-md bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#a3b18a]"></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit"
+                            class="bg-[#a3b18a] text-[#2d5a4a] py-3 px-12 rounded-full text-lg font-bold hover:bg-white transition-all duration-300 shadow-lg transform hover:-translate-y-1 w-full sm:w-auto">
+                        שליחת פנייה
+                    </button>
+                </div>
+            </form>
+             </div>
+    </div>
+</section>
+
+    <script>
+        // Lightbox functionality
+        function openLightbox(src, caption) {
+            document.getElementById('lightbox-image').src = src;
+            document.getElementById('lightbox-caption').innerText = caption;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close') || event.target.tagName === 'SPAN') {
+                document.getElementById('lightbox').style.display = 'none';
+            }
+        }
+    </script>
+</main>
+
 
     <!-- Footer -->
-    <footer class="bg-brand-brown/90 text-white py-6 text-center">
+    <footer class="bg-brand-brown text-white py-3 text-center">
       <div class="container mx-auto px-6">
-        <p class="text-lg text-white mt-2">
+        <p class="text-xl text-white mt-2">
           נבנה ע"י שחר מעוז
           <a class="text-blue-700" href="https://master-stack.com">
             MasterStack </a
@@ -1564,8 +1140,121 @@
         });
       }, observerOptions);
 
+      // Parallax effect - video becomes fixed when scrolling
+      function initHeroParallax() {
+        const video = document.getElementById('hero-video');
+        const heroSection = document.getElementById('home');
+        
+        if (video && heroSection) {
+          window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroHeight = heroSection.offsetHeight;
+            
+            if (scrolled > 0 && scrolled < heroHeight) {
+              // Make video fixed when scrolling starts
+              video.style.position = 'fixed';
+              video.style.top = '0';
+              video.style.left = '0';
+              video.style.zIndex = '-1';
+            } else if (scrolled >= heroHeight) {
+              // Hide video when completely scrolled past hero
+              video.style.display = 'none';
+            } else {
+              // Reset to normal when at top
+              video.style.position = 'absolute';
+              video.style.zIndex = '0';
+              video.style.display = 'block';
+            }
+          });
+        }
+      }
+
+      // Collaborations Carousel
+      const collaborationImages = [
+        { src: 'assets/images/collabs.png', alt: 'שותפות עסקית' },
+        { src: 'assets/images/collabs2.jpg', alt: 'הכרה מקצועית' },
+        // Add more images here easily:
+        { src: 'assets/images/collabs3.jpg', alt: 'תיאור נוסף' },
+        { src: 'assets/images/collabs4.png', alt: 'תיאור נוסף' },
+      ];
+
+      function initCollaborationsCarousel() {
+        const carousel = document.getElementById('collab-carousel');
+        if (!carousel) return;
+
+        // Create duplicate sets for infinite scroll
+        const totalImages = collaborationImages.length;
+        const imagesToShow = Math.max(3, totalImages); // Show at least 3 images
+        const duplicatedImages = [...collaborationImages, ...collaborationImages, ...collaborationImages];
+
+        // Populate carousel
+        carousel.innerHTML = '';
+        duplicatedImages.forEach((image, index) => {
+          const imageContainer = document.createElement('div');
+          imageContainer.className = 'flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110';
+          
+          const img = document.createElement('img');
+          img.src = image.src;
+          img.alt = image.alt;
+          img.className = 'h-48 md:h-60 object-contain max-w-32 md:max-w-40';
+
+          if (image.src.includes('.jpg')) {
+            img.className += ' rounded-lg';
+          }
+          
+          imageContainer.appendChild(img);
+          carousel.appendChild(imageContainer);
+        });
+
+        // Auto-scroll functionality
+        let currentIndex = totalImages; // Start from middle set
+        const imageWidth = 180; // Approximate width including gap
+
+        function updateCarousel() {
+          carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+        }
+
+        function nextSlide() {
+          currentIndex++;
+          updateCarousel();
+          
+          // Reset to beginning of middle set when reaching end
+          if (currentIndex >= totalImages * 2) {
+            setTimeout(() => {
+              carousel.style.transition = 'none';
+              currentIndex = totalImages;
+              updateCarousel();
+              setTimeout(() => {
+                carousel.style.transition = 'transform 0.5s ease-in-out';
+              }, 50);
+            }, 500);
+          }
+        }
+
+        // Initial setup
+        updateCarousel();
+        
+        // Auto-advance every 3 seconds
+        setInterval(nextSlide, 3000);
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => {
+          carousel.style.animationPlayState = 'paused';
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+          carousel.style.animationPlayState = 'running';
+        });
+      }
+
       // Initialize everything when DOM is loaded
       document.addEventListener("DOMContentLoaded", function () {
+        // Initialize hero parallax effect
+        initHeroParallax();
+        
+        // Initialize collaborations carousel
+        initCollaborationsCarousel();
+        
         // Observe portfolio items for animation
         const portfolioItems = document.querySelectorAll(".masonry-item");
         portfolioItems.forEach((item, index) => {
