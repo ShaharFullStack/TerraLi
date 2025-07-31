@@ -702,17 +702,26 @@
     </section>
 
     <!-- Collaborations Section -->
-    <section id="collaborations" class="py-16 bg-white overflow-hidden">
+    <section id="collaborations" class="py-16 bg-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold text-[#2d5a4a] mb-4">שותפות והכרה</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
                 גאה לעבוד עם מוסדות מובילים ולהיות מוכרת בתחום הטרריומים בישראל
             </p>
-            <!-- Carousel Container -->
-            <div class="relative">
-                <div class="carousel-track flex items-center gap-12 transition-transform duration-500 ease-in-out" id="collab-carousel">
-                    <!-- Carousel items will be populated by JavaScript -->
+            <!-- Static Grid Container -->
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="flex justify-center items-center   transition-all duration-300 transform hover:scale-110">
+                    <img src="assets/images/collabs.png" alt="שותפות עסקית" class="h-32 md:h-40 object-contain max-w-full">
                 </div>
+                <div class="flex justify-center items-center   transition-all duration-300 transform hover:scale-110">
+                    <img src="assets/images/collabs2.jpg" alt="הכרה מקצועית" class="h-32 md:h-40 object-contain max-w-full rounded-lg">
+                </div>
+                <!-- <div class="flex justify-center items-center   transition-all duration-300 transform hover:scale-110">
+                    <img src="assets/images/collabs3.jpg" alt="תיאור נוסף" class="h-32 md:h-40 object-contain max-w-full rounded-lg">
+                </div>
+                <div class="flex justify-center items-center   transition-all duration-300 transform hover:scale-110">
+                    <img src="assets/images/collabs4.png" alt="תיאור נוסף" class="h-32 md:h-40 object-contain max-w-full">
+                </div> -->
             </div>
         </div>
     </section>
@@ -1169,91 +1178,11 @@
         }
       }
 
-      // Collaborations Carousel
-      const collaborationImages = [
-        { src: 'assets/images/collabs.png', alt: 'שותפות עסקית' },
-        { src: 'assets/images/collabs2.jpg', alt: 'הכרה מקצועית' },
-        // Add more images here easily:
-        { src: 'assets/images/collabs3.jpg', alt: 'תיאור נוסף' },
-        { src: 'assets/images/collabs4.png', alt: 'תיאור נוסף' },
-      ];
-
-      function initCollaborationsCarousel() {
-        const carousel = document.getElementById('collab-carousel');
-        if (!carousel) return;
-
-        // Create duplicate sets for infinite scroll
-        const totalImages = collaborationImages.length;
-        const imagesToShow = Math.max(3, totalImages); // Show at least 3 images
-        const duplicatedImages = [...collaborationImages, ...collaborationImages, ...collaborationImages];
-
-        // Populate carousel
-        carousel.innerHTML = '';
-        duplicatedImages.forEach((image, index) => {
-          const imageContainer = document.createElement('div');
-          imageContainer.className = 'flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110';
-          
-          const img = document.createElement('img');
-          img.src = image.src;
-          img.alt = image.alt;
-          img.className = 'h-48 md:h-60 object-contain max-w-32 md:max-w-40';
-
-          if (image.src.includes('.jpg')) {
-            img.className += ' rounded-lg';
-          }
-          
-          imageContainer.appendChild(img);
-          carousel.appendChild(imageContainer);
-        });
-
-        // Auto-scroll functionality
-        let currentIndex = totalImages; // Start from middle set
-        const imageWidth = 180; // Approximate width including gap
-
-        function updateCarousel() {
-          carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-        }
-
-        function nextSlide() {
-          currentIndex++;
-          updateCarousel();
-          
-          // Reset to beginning of middle set when reaching end
-          if (currentIndex >= totalImages * 2) {
-            setTimeout(() => {
-              carousel.style.transition = 'none';
-              currentIndex = totalImages;
-              updateCarousel();
-              setTimeout(() => {
-                carousel.style.transition = 'transform 0.5s ease-in-out';
-              }, 50);
-            }, 500);
-          }
-        }
-
-        // Initial setup
-        updateCarousel();
-        
-        // Auto-advance every 3 seconds
-        setInterval(nextSlide, 3000);
-
-        // Pause on hover
-        carousel.addEventListener('mouseenter', () => {
-          carousel.style.animationPlayState = 'paused';
-        });
-        
-        carousel.addEventListener('mouseleave', () => {
-          carousel.style.animationPlayState = 'running';
-        });
-      }
 
       // Initialize everything when DOM is loaded
       document.addEventListener("DOMContentLoaded", function () {
         // Initialize hero parallax effect
         initHeroParallax();
-        
-        // Initialize collaborations carousel
-        initCollaborationsCarousel();
         
         // Observe portfolio items for animation
         const portfolioItems = document.querySelectorAll(".masonry-item");
