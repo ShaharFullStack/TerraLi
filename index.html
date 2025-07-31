@@ -610,22 +610,22 @@
 
     <!-- Hero Section with Fixed Background -->
     <section id="home" class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
-        <!-- Video Background Fixed -->
-        <video id="hero-video" class="absolute inset-0 w-full h-full object-cover z-0" src="assets/videos/workshopPrep.mp4" autoplay loop muted playsinline></video>
+      <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-[#2d5a4a]/60 z-10"></div>
+      <video id="hero-video" class="absolute inset-0 w-full h-full object-cover z-0" src="assets/videos/workshopPrep.mp4" autoplay loop muted playsinline></video>
         <div class="relative z-20 max-w-4xl px-6 mx-auto text-center flex flex-col items-center">
             <img src="assets/android-chrome-512x512.png" alt="Terra Li Logo" class="mb-4 w-48 h-48 md:w-56 md:h-56 object-cover rounded-full shadow-2xl border-4 border-white/20 backdrop-blur-sm"/>
             <h1 class="text-6xl md:text-8xl font-bold leading-tight mb-4 drop-shadow-xl">
                 <span class="block">עולם קטן,</span>
-                <span class="block" style="color: #a2d151;">יופי אינסופי.</span>
+                <span class="block" style="color: #abe940;">יופי אינסופי.</span>
             </h1>
-            <p class="text-2xl text-dark-brown md:text-3xl bg-[#a2d151]/20 backdrop-blur-md py-2 px-4 rounded-lg max-w-3xl mx-auto">
+            <p class="text-2xl text-dark-brown md:text-3xl bg-[#abe940]/50 backdrop-blur-md py-2 px-4 rounded-lg max-w-3xl mx-auto">
                 Terra Li | טרריומים בהזמנה אישית וסדנאות מקצועיות
             </p>
             <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#portfolio" class="bg-white/90 text-[#2d5a4a] hover:bg-[#a2d151] py-3 px-8 rounded-full text-xl font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                <a href="#portfolio" class="bg-white/80 text-brand-purple hover:bg-[#caf77d] py-3 px-8 rounded-full text-xl font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
                     גלריית טרריומים
                 </a>
-                <a href="#services" class="bg-white/90 text-[#2d5a4a] hover:bg-[#a2d151] py-3 px-8 rounded-full text-xl font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                <a href="#services" class="bg-white/80 text-brand-purple hover:bg-[#caf77d] py-3 px-8 rounded-full text-xl font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
                     הרשמה לסדנה
                 </a>
             </div>
@@ -635,7 +635,7 @@
     <!-- Services Section -->
     <section id="services" class="relative z-30 py-20 bg-[#f4f1ea] shadow-2xl">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-6xl md:text-7xl font-bold text-[#2d5a4a] mb-6">הקסם הירוק של Terra Li</h2>
+            <h2 class="text-6xl md:text-7xl font-bold text-brand-purple mb-6">הקסם הירוק של Terra Li</h2>
             <p class="text-dark-brown text-2xl font-semibold md:text-3xl max-w-4xl mx-auto mb-12 leading-relaxed">
                 אני מציעה חוויה ייחודית בעולם הטרריומים – מיצירת גנים מיניאטוריים עוצרי נשימה ועד סדנאות יצירה המכניסות את הטבע הביתה.
             </p>
@@ -704,7 +704,7 @@
     <!-- Collaborations Section -->
     <section id="collaborations" class="py-16 bg-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-[#2d5a4a] mb-4">שותפות והכרה</h2>
+            <h2 class="text-6xl md:text-7xl font-bold text-brand-purple mb-6">שותפות והכרה</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
                 גאה לעבוד עם מוסדות מובילים ולהיות מוכרת בתחום הטרריומים בישראל
             </p>
@@ -757,7 +757,7 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-20 bg-[#f4f1ea]">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-7xl md:text-8xl font-bold text-[#2d5a4a] mb-4">גלריית הטרריומים</h2>
+            <h2 class="text-6xl md:text-7xl font-bold text-brand-purple mb-6">גלריית הטרריומים</h2>
                                     <p class=" text-2xl font-semibold md:text-3xl max-w-4xl mx-auto mb-12 leading-relaxed">
                 כל טרריום הוא עולם קטן שמספר סיפור ייחודי. הצצה לעולמות מיניאטוריים שנוצרו באהבה ותשומת לב לפרטים.
             </p>
@@ -932,8 +932,8 @@
                 </div>
             </div>
             <div class="mt-8">
-              <p class="text-xl text-brand-gold font-bold">אין צורך להביא דבר מלבד מצב רוח טוב!</p>
-              <ul class="list-disc list-inside text-lg mt-2 text-brand-gold">
+              <p class="text-4xl text-brand-gold font-bold">אין צורך להביא דבר מלבד מצב רוח טוב!</p>
+              <ul class="list-disc list-inside text-2xl mt-2 text-brand-gold">
                 <li>כלי זכוכית מיוחדים</li>
                 <li>מצעי שתילה איכותיים</li>
                 <li>צמחים ייחודיים לטרריום סגור</li>
@@ -947,7 +947,7 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-20 bg-[#f4f1ea]">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-5xl md:text-6xl font-bold text-[#2d5a4a] mb-4">מה המשתתפים מספרים</h2>
+            <h2 class="text-6xl md:text-7xl font-bold text-brand-purple mb-6">מה המשתתפים מספרים</h2>
             <p class="text-dark-green text-2xl font-semibold">
                 השמחה הגדולה ביותר שלי היא לראות את החיוך שלכם. הנה כמה מילים חמות:
             </p>
